@@ -1,0 +1,26 @@
+{
+  "name": "re-toast",
+  "version": "1.0.0",
+  "description": "A simple library for sending notifications",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josephenoch/re-toast.git"
+  },
+  "keywords": [
+    "reactjs",
+    "toastify",
+    "notification",
+    "typescript",
+    "javascript"
+  ],
+  "author": "Joseph Enoch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/josephenoch/re-toast/issues"
+  },
+  "homepage": "https://github.com/josephenoch/re-toast#readme"
+}
