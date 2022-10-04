@@ -1,0 +1,18 @@
+#container{
+    display: flex;
+    padding: 10px 10px;
+    align-items: center;
+    border-radius: 15px;
+
+    &>*{
+        margin-right: 10px;
+    }
+
+    &:first-child{
+        margin-right: 0px;
+    }
+
+    & #text{
+        color: #323C46
+    }
+}
