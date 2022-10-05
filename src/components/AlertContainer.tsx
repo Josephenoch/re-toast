@@ -9,8 +9,6 @@ import Alert from './Alert'
 import { IIcons , IDetails, IColors} from './interfaces'
 import { defaultIcons, defaultBGColors, defaultColors } from './data';
 
-import styles from "./styles/alert-container.module.scss"
-
 interface IDetailsWithID extends IDetails {
   id: string
 }
@@ -51,11 +49,18 @@ const AlertContainer:FC<IProps> = ({icons=defaultIcons, bgColors=defaultBGColors
   },[])
 
   return (
-    <div id={styles.container}>
+    <div
+      style={{
+        position: "absolute",
+        right: "3rem",
+        top: "2rem"
+      }}
+    >
       {
-        alerts.map(alertItem=>
+        alerts.map((alertItem, idx)=>
           <Alert 
             key = {alertItem.id}
+            index={idx}
             duration = {alertItem.duration} 
             id = {alertItem.id} 
             destroy = {destroy} 

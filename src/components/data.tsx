@@ -1,3 +1,6 @@
+
+import React from 'react';
+
 // Icons import
 import { Error, Done, Dangerous, Info }from '@mui/icons-material';
 

@@ -4,9 +4,6 @@ import React, {FC, ReactElement} from 'react'
 // components/data imports
 import { defaultColors } from "./data"
 
-// style imports
-import styles from "./styles/icon-container.module.scss"
-
 interface IIconContainerProps {
   children: ReactElement
   type: "success" | "error" | "info" | "warn"
@@ -15,9 +12,14 @@ interface IIconContainerProps {
 const IconWrapper:FC<IIconContainerProps> = ({children, type}) =>{
    return(
     <div
-      id={styles.container}
       style={{
-        backgroundColor: defaultColors[type]
+        backgroundColor: defaultColors[type],
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: "35px",
+        height: "35px",
+        borderRadius: "50px",
       }}
     >
       {children}

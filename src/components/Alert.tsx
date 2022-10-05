@@ -1,14 +1,13 @@
 import React, { FC, useEffect, memo, ReactElement} from 'react'
 import {IDetails} from './interfaces'
 
-import styles from "./styles/alert.module.scss"
-
 interface IAlertProps extends IDetails {
   destroy: (id:string)=>void
   id:string
   icon: ReactElement
   color: string
-  bgColor: string
+  bgColor: string,
+  index: number
 }
 
 const Alert:FC<IAlertProps> = ({
@@ -18,8 +17,8 @@ const Alert:FC<IAlertProps> = ({
   message,
   destroy,
   color,
-  bgColor
-
+  bgColor,
+  index
 }) => {
   
   
@@ -31,14 +30,23 @@ const Alert:FC<IAlertProps> = ({
   },[])
   return (
     <div
-      id={styles.container}
       style={{
         backgroundColor: bgColor,
-        border: `${color} solid 0.5px`
+        border: `${color} solid 0.5px`,
+        marginTop: index === 0 ? "0px" :  "10px",
+        display: "flex",
+        padding: "10px 10px",
+        alignItems: "center",
+        borderRadius: "15px"
       }}
     >
         {icon}
-        <span id={styles.text}>{message}</span>
+        <span
+          style={{
+            marginLeft: "10px",
+            color:"#323C46"
+          }}
+        >{message}</span>
     </div>
   )
 }
