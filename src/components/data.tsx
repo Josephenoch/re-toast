@@ -30,3 +30,7 @@ export const defaultBGColors:IColors ={
   warn: "#FEF7EA",
   info: "#E6EFFA"
 }
+
+export const defualtContainerStyle:CssS = {
+
+}
