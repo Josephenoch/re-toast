@@ -50,6 +50,8 @@
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "@tsconfig/recommended": "^1.0.1",
     "sass": "^1.55.0",
     "webpack": "^5.74.0",
