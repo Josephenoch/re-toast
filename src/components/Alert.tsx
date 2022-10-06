@@ -1,4 +1,4 @@
-import React, { FC, useEffect, memo, ReactElement} from 'react'
+import React, { FC, useEffect, memo, ReactElement, CSSProperties} from 'react'
 import {IDetails} from './interfaces'
 
 interface IAlertProps extends IDetails {
@@ -7,7 +7,8 @@ interface IAlertProps extends IDetails {
   icon: ReactElement
   color: string
   bgColor: string,
-  index: number
+  index: number,
+  alertStyle : CSSProperties
 }
 
 const Alert:FC<IAlertProps> = ({
@@ -18,7 +19,8 @@ const Alert:FC<IAlertProps> = ({
   destroy,
   color,
   bgColor,
-  index
+  index,
+  alertStyle
 }) => {
   
   
@@ -34,10 +36,7 @@ const Alert:FC<IAlertProps> = ({
         backgroundColor: bgColor,
         border: `${color} solid 0.5px`,
         marginTop: index === 0 ? "0px" :  "10px",
-        display: "flex",
-        padding: "10px 10px",
-        alignItems: "center",
-        borderRadius: "15px"
+        ...alertStyle
       }}
     >
         {icon}

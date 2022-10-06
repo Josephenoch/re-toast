@@ -1,21 +1,11 @@
 
-import React from 'react';
-
+import type { CSSProperties } from 'react';
 // Icons import
-import { Error, Done, Dangerous, Info }from '@mui/icons-material';
 
 // local components import
-import IconWrapper from './IconWrapper';
 
 // Interface imports
-import { IIcons , IColors} from './interfaces'
-
-export const defaultIcons:IIcons = {
-  success: <IconWrapper type="success"><Done htmlColor="white"/></IconWrapper>,
-  error: <IconWrapper type="error"><Dangerous htmlColor="white"/></IconWrapper>,
-  warn: <IconWrapper type="warn"><Error htmlColor="white"/></IconWrapper>,
-  info: <IconWrapper type="info"><Info htmlColor="white"/></IconWrapper>
-}
+import {IColors} from './interfaces'
   
 export const defaultColors:IColors = {
   error:"#D5390D",
@@ -31,6 +21,15 @@ export const defaultBGColors:IColors ={
   info: "#E6EFFA"
 }
 
-export const defualtContainerStyle:CssS = {
+export const defualtContainerStyle:CSSProperties = {
+  position: "absolute",
+  right: "3rem",
+  top: "2rem"
+}
 
+export const defaultAlertStyle:CSSProperties = {
+  display: "flex",
+  padding: "10px 10px",
+  alignItems: "center",
+  borderRadius: "15px"
 }

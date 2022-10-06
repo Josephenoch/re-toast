@@ -1,13 +1,19 @@
 // module imports
-import React,{FC, useCallback, useEffect, useState} from 'react'
+import React,{CSSProperties, FC, useCallback, useEffect, useState} from 'react'
 import { v4 as uuidv4 } from 'uuid';
+import { Error, Done, Dangerous, Info }from '@mui/icons-material';
+
 
 // local component/data imports
 import Alert from './Alert'
 
 // interfaces and types import
 import { IIcons , IDetails, IColors} from './interfaces'
-import { defaultIcons, defaultBGColors, defaultColors } from './data';
+import { defaultBGColors, defaultColors } from './data';
+import IconWrapper from './IconWrapper';
+
+
+import { defualtContainerStyle, defaultAlertStyle } from "./data"
 
 interface IDetailsWithID extends IDetails {
   id: string
@@ -17,9 +23,27 @@ interface IProps{
   icons?: IIcons
   colors?: IColors
   bgColors?: IColors
+  containerStyle?: CSSProperties
+  alertStyle?: CSSProperties
 }
 
-const AlertContainer:FC<IProps> = ({icons=defaultIcons, bgColors=defaultBGColors, colors=defaultColors}) => {
+const AlertContainer:FC<IProps> = ({
+  icons, 
+  bgColors = defaultBGColors, 
+  colors = defaultColors,
+  containerStyle = defualtContainerStyle,
+  alertStyle = defaultAlertStyle
+}) => {
+
+  const defaultIcons:IIcons = {
+    success: <IconWrapper colors={colors} type="success"><Done htmlColor="white"/></IconWrapper>,
+    error: <IconWrapper colors={colors} type="error"><Dangerous htmlColor="white"/></IconWrapper>,
+    warn: <IconWrapper colors={colors} type="warn"><Error htmlColor="white"/></IconWrapper>,
+    info: <IconWrapper colors={colors} type="info"><Info htmlColor="white"/></IconWrapper>
+  }
+  
+  const chosenIcons = icons ? icons : defaultIcons
+
   const [alerts, setAlerts] = useState<IDetailsWithID[]>([])
 
   const handleAlertEvent = useCallback(
@@ -51,9 +75,7 @@ const AlertContainer:FC<IProps> = ({icons=defaultIcons, bgColors=defaultBGColors
   return (
     <div
       style={{
-        position: "absolute",
-        right: "3rem",
-        top: "2rem"
+          ...containerStyle
       }}
     >
       {
@@ -66,9 +88,10 @@ const AlertContainer:FC<IProps> = ({icons=defaultIcons, bgColors=defaultBGColors
             destroy = {destroy} 
             type= { alertItem.type} 
             message = {alertItem.message}
-            icon = {icons[alertItem.type]}
+            icon = {chosenIcons[alertItem.type]}
             color =   {colors[alertItem.type]}
             bgColor = {bgColors[alertItem.type]}
+            alertStyle={alertStyle}
           />)
       }
       

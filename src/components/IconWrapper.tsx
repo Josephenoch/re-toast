@@ -2,18 +2,19 @@
 import React, {FC, ReactElement} from 'react'
 
 // components/data imports
-import { defaultColors } from "./data"
+import { IColors } from './interfaces'
 
 interface IIconContainerProps {
   children: ReactElement
-  type: "success" | "error" | "info" | "warn"
+  type: "success" | "error" | "info" | "warn",
+  colors:IColors
 }
 
-const IconWrapper:FC<IIconContainerProps> = ({children, type}) =>{
+const IconWrapper:FC<IIconContainerProps> = ({children, type, colors}) =>{
    return(
     <div
       style={{
-        backgroundColor: defaultColors[type],
+        backgroundColor: colors[type],
         display: "inline-flex",
         alignItems: "center",
         justifyContent: "center",
