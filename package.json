@@ -1,11 +1,12 @@
 {
   "name": "re-toast",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple library for sending notifications",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "scripts": {
+    "start": "webpack",
     "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
@@ -47,9 +48,13 @@
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.3",
+    "esbuild-loader": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.55.0",
+    "terser-webpack-plugin": "^5.3.8",
     "ts-loader": "^9.4.2",
     "webpack": "^5.82.1",
     "webpack-cli": "^4.10.0"

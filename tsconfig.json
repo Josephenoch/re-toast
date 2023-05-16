@@ -1,6 +1,9 @@
 {
   "include": ["src"],
   "exclude": ["dist", "node_modules"],
+  "declaration": true,
+  "emitDeclarationOnly": true,
+  "isolatedModules": true,
   "compilerOptions": {
     "module": "esnext",
     "lib": ["dom", "esnext"],

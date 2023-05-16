@@ -21,11 +21,7 @@ export const defaultBGColors:ColorsType ={
   info: "#E6EFFA"
 }
 
-export const defualtContainerStyle:CSSProperties = {
-  position: "absolute",
-  right: "3rem",
-  top: "2rem"
-}
+
 
 export const defaultAlertStyle:CSSProperties = {
   display: "flex",

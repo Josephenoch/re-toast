@@ -1,7 +1,7 @@
 // module imports
 import React,{CSSProperties, FC, useCallback, useEffect, useState} from 'react'
 import { v4 as uuidv4 } from 'uuid';
-
+// import "./index.css"
 
 // local component/data imports
 import Alert from './Alert'
@@ -11,7 +11,7 @@ import { IconsType , DetailsType, ColorsType} from './types'
 import { defaultBGColors, defaultColors } from './data';
 
 
-import { defualtContainerStyle, defaultAlertStyle } from "./data"
+import { defaultAlertStyle } from "./data"
 import { CheckIcon, InfoIcon, WarnIcon } from './svg';
 
 interface IDetailsWithID extends DetailsType {
@@ -30,15 +30,14 @@ const AlertContainer:FC<IProps> = ({
   icons, 
   bgColors = defaultBGColors, 
   colors = defaultColors,
-  containerStyle = defualtContainerStyle,
   alertStyle = defaultAlertStyle
 }) => {
 
   const defaultIcons:IconsType = {
-    success: <CheckIcon/>,
-    error: <WarnIcon/>,
-    warn: <WarnIcon/>,
-    info: <InfoIcon/>
+    success: <CheckIcon className="w-10 h-10"/>,
+    error: <WarnIcon className="w-10 h-10"/>,
+    warn: <WarnIcon className="w-10 h-10"/>,
+    info: <InfoIcon className="w-10 h-10"/>
   }
   
   const chosenIcons = icons ? icons : defaultIcons
@@ -73,9 +72,7 @@ const AlertContainer:FC<IProps> = ({
 
   return (
     <div
-      style={{
-          ...containerStyle
-      }}
+      className="absolute top-4 right-12"
     >
       {
         alerts.map((alertItem, idx)=>
