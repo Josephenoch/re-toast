@@ -1,5 +1,5 @@
 // interface imports
-import { IDetails } from './interfaces';
+import { IDetails } from './types';
 
 const CreateAlert= (detail:IDetails) =>{
 	window.dispatchEvent(

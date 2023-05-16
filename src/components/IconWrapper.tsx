@@ -2,7 +2,7 @@
 import React, {FC, ReactElement} from 'react'
 
 // components/data imports
-import { IColors } from './interfaces'
+import { IColors } from './types'
 
 interface IIconContainerProps {
   children: ReactElement

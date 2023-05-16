@@ -5,7 +5,7 @@ import type { CSSProperties } from 'react';
 // local components import
 
 // Interface imports
-import {IColors} from './interfaces'
+import {IColors} from './types'
   
 export const defaultColors:IColors = {
   error:"#D5390D",

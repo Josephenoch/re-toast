@@ -1,6 +1,2 @@
-import { AlertContainer, CreateAlert } from "./components";
-
-export {
-    AlertContainer,
-    CreateAlert
-}
+export { default as CreateAlert } from "./components/CreateAlert"
+export { default as AlertContainer } from "./components/AlertContainer"

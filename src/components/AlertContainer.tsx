@@ -8,7 +8,7 @@ import { Error, Done, Dangerous, Info }from '@mui/icons-material';
 import Alert from './Alert'
 
 // interfaces and types import
-import { IIcons , IDetails, IColors} from './interfaces'
+import { IIcons , IDetails, IColors} from './types'
 import { defaultBGColors, defaultColors } from './data';
 import IconWrapper from './IconWrapper';
 

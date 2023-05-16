@@ -1,5 +1,5 @@
 import React, { FC, useEffect, memo, ReactElement, CSSProperties} from 'react'
-import {IDetails} from './interfaces'
+import {IDetails} from './types'
 
 interface IAlertProps extends IDetails {
   destroy: (id:string)=>void

@@ -1,4 +1,24 @@
-// module imports
-import { ReactElement } from "react";
+// interface and types import
 
-export type TIcon = ReactElement
+import { ReactElement } from "react"
+
+export type IIcons  ={
+	success: ReactElement,
+	error: ReactElement,
+	info: ReactElement,
+	warn: ReactElement
+}
+
+export type IColors = {
+	success: string,
+	error: string,
+	info: string,
+	warn: string
+}
+
+export type IDetails = {
+	type: "success" | "error" | "warn" | "info",
+	message: string,
+	duration: number 
+
+}
