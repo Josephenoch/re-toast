@@ -50,7 +50,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.55.0",
-    "webpack": "^5.74.0",
+    "ts-loader": "^9.4.2",
+    "webpack": "^5.82.1",
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
