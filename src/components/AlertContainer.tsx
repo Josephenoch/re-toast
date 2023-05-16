@@ -1,7 +1,6 @@
 // module imports
 import React,{CSSProperties, FC, useCallback, useEffect, useState} from 'react'
 import { v4 as uuidv4 } from 'uuid';
-import { Error, Done, Dangerous, Info }from '@mui/icons-material';
 
 
 // local component/data imports
@@ -10,10 +9,10 @@ import Alert from './Alert'
 // interfaces and types import
 import { IconsType , DetailsType, ColorsType} from './types'
 import { defaultBGColors, defaultColors } from './data';
-import IconWrapper from './IconWrapper';
 
 
 import { defualtContainerStyle, defaultAlertStyle } from "./data"
+import { CheckIcon, InfoIcon, WarnIcon } from './svg';
 
 interface IDetailsWithID extends DetailsType {
   id: string
@@ -36,10 +35,10 @@ const AlertContainer:FC<IProps> = ({
 }) => {
 
   const defaultIcons:IconsType = {
-    success: <IconWrapper colors={colors} type="success"><Done htmlColor="white"/></IconWrapper>,
-    error: <IconWrapper colors={colors} type="error"><Dangerous htmlColor="white"/></IconWrapper>,
-    warn: <IconWrapper colors={colors} type="warn"><Error htmlColor="white"/></IconWrapper>,
-    info: <IconWrapper colors={colors} type="info"><Info htmlColor="white"/></IconWrapper>
+    success: <CheckIcon/>,
+    error: <WarnIcon/>,
+    warn: <WarnIcon/>,
+    info: <InfoIcon/>
   }
   
   const chosenIcons = icons ? icons : defaultIcons
@@ -83,14 +82,11 @@ const AlertContainer:FC<IProps> = ({
           <Alert 
             key = {alertItem.id}
             index={idx}
-            duration = {alertItem.duration} 
-            id = {alertItem.id} 
             destroy = {destroy} 
-            type= { alertItem.type} 
-            message = {alertItem.message}
             icon = {chosenIcons[alertItem.type]}
             color =   {colors[alertItem.type]}
             bgColor = {bgColors[alertItem.type]}
+            {...alertItem}
             alertStyle={alertStyle}
           />)
       }

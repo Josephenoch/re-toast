@@ -5,16 +5,16 @@ import type { CSSProperties } from 'react';
 // local components import
 
 // Interface imports
-import {IColors} from './types'
+import {ColorsType} from './types'
   
-export const defaultColors:IColors = {
+export const defaultColors:ColorsType = {
   error:"#D5390D",
   success: "#629161",
   warn:"#F1D4AB",
   info: "#173DB9"
 }
 
-export const defaultBGColors:IColors ={
+export const defaultBGColors:ColorsType ={
   success: "#EAF7EE",
   error: "#FCEDE9",
   warn: "#FEF7EA",
