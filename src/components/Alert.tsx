@@ -1,7 +1,7 @@
 import React, { FC, useEffect, memo, ReactElement, CSSProperties} from 'react'
-import {IDetails} from './types'
+import {DetailsType} from './types'
 
-interface IAlertProps extends IDetails {
+interface IAlertProps extends DetailsType {
   destroy: (id:string)=>void
   id:string
   icon: ReactElement

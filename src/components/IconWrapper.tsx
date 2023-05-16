@@ -2,15 +2,15 @@
 import React, {FC, ReactElement} from 'react'
 
 // components/data imports
-import { IColors } from './types'
+import { ColorsType } from './types'
 
-interface IIconContainerProps {
+type PropsType = {
   children: ReactElement
   type: "success" | "error" | "info" | "warn",
-  colors:IColors
+  colors:ColorsType
 }
 
-const IconWrapper:FC<IIconContainerProps> = ({children, type, colors}) =>{
+const IconWrapper:FC<PropsType> = ({children, type, colors}) =>{
    return(
     <div
       style={{

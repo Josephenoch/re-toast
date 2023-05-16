@@ -8,21 +8,21 @@ import { Error, Done, Dangerous, Info }from '@mui/icons-material';
 import Alert from './Alert'
 
 // interfaces and types import
-import { IIcons , IDetails, IColors} from './types'
+import { IconsType , DetailsType, ColorsType} from './types'
 import { defaultBGColors, defaultColors } from './data';
 import IconWrapper from './IconWrapper';
 
 
 import { defualtContainerStyle, defaultAlertStyle } from "./data"
 
-interface IDetailsWithID extends IDetails {
+interface IDetailsWithID extends DetailsType {
   id: string
 }
 
 interface IProps{
-  icons?: IIcons
-  colors?: IColors
-  bgColors?: IColors
+  icons?: IconsType
+  colors?: ColorsType
+  bgColors?: ColorsType
   containerStyle?: CSSProperties
   alertStyle?: CSSProperties
 }
@@ -35,7 +35,7 @@ const AlertContainer:FC<IProps> = ({
   alertStyle = defaultAlertStyle
 }) => {
 
-  const defaultIcons:IIcons = {
+  const defaultIcons:IconsType = {
     success: <IconWrapper colors={colors} type="success"><Done htmlColor="white"/></IconWrapper>,
     error: <IconWrapper colors={colors} type="error"><Dangerous htmlColor="white"/></IconWrapper>,
     warn: <IconWrapper colors={colors} type="warn"><Error htmlColor="white"/></IconWrapper>,

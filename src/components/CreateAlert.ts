@@ -1,7 +1,7 @@
 // interface imports
-import { IDetails } from './types';
+import { DetailsType } from './types';
 
-const CreateAlert= (detail:IDetails) =>{
+const CreateAlert= (detail:DetailsType) =>{
 	window.dispatchEvent(
 		new CustomEvent("CreateAlert", {
 			detail
